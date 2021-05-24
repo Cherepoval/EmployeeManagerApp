@@ -6,7 +6,6 @@ import com.alexcherepov.employee_manager.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 import java.util.UUID;
 
@@ -37,6 +36,6 @@ public class EmployeeService {
     }
 
     public void deleteEmployee(long id){
-        employeeRepository.deleteEmployeeById(id);
+        employeeRepository.deleteById(id);
     }
 }

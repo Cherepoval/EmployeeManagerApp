@@ -38,13 +38,13 @@ public class EmployeeResource {
 
     @PutMapping("/update")
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee){
-        Employee updatedEmployee = employeeService.updateEmployee(employee);
-        return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
+        Employee employeeToEdit = employeeService.updateEmployee(employee);
+        return new ResponseEntity<>(employeeToEdit, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") long id){
         employeeService.deleteEmployee(id);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
